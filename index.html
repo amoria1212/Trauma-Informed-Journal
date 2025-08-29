@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trauma-Informed Journal</title>
+    <title>Gentle Reflection Journal</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -245,16 +245,16 @@
 
         <!-- Action Buttons -->
         <div class="no-print flex flex-wrap gap-3 mb-6 justify-center sm:justify-end">
-            <button id="shareBtn" class="btn bg-yellow-100 hover:bg-yellow-200 text-yellow-800 px-4 py-2 rounded-lg">
+            <button id="shareBtn" onclick="openShareModal()" class="btn bg-purple-100 hover:bg-purple-200 text-purple-800 px-4 py-2 rounded-lg">
                 🔗 Share Journal
             </button>
-            <button id="exportBtn" class="btn bg-blue-100 hover:bg-blue-200 text-blue-800 px-4 py-2 rounded-lg">
-                📄 Export Entries
+            <button id="exportBtn" onclick="exportData()" class="btn bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg">
+                📥 Export Responses
             </button>
-            <button id="printBtn" class="btn bg-green-100 hover:bg-green-200 text-green-800 px-4 py-2 rounded-lg">
+            <button id="printBtn" onclick="window.print()" class="btn bg-blue-50 hover:bg-blue-100 text-blue-600 px-4 py-2 rounded-lg">
                 🖨️ Print
             </button>
-            <button id="clearBtn" class="btn bg-red-100 hover:bg-red-200 text-red-800 px-4 py-2 rounded-lg">
+            <button id="clearBtn" onclick="clearData()" class="btn bg-red-50 hover:bg-red-100 text-red-600 px-4 py-2 rounded-lg">
                 🗑️ Clear All
             </button>
         </div>
@@ -265,12 +265,12 @@
                 <img src="https://i.imgur.com/JwAdvDd.png" alt="Janice LaFountaine, MS, LMFT Logo" class="h-24 w-auto rounded-full shadow-md">
             </div>
             <div class="flex-grow">
-                <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-2">Trauma-Informed Journal</h1>
+                <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-2">Gentle Reflection Journal</h1>
                 <p class="text-gray-600 leading-relaxed text-lg mb-4">
                     This journal is designed to gently guide you toward a deeper connection with your body and your emotions. These prompts prioritize safety and self-compassion, helping you build a foundation for healing.
                 </p>
                 <div class="info-box text-sm text-gray-700">
-                    <p class="mb-2">💡 <strong>Gentle Reminder:</strong> There are no right or wrong answers. Your responses are automatically saved, so you can take your time. This is your space for curious, compassionate self-reflection.</p>
+                    <p class="mb-2">💡 <strong>Gentle Reminder:</strong> There are no right or wrong answers. You can work at your own pace and use the export or share options to save your responses. This is your space for curious, compassionate self-reflection.</p>
                 </div>
             </div>
         </header>
@@ -337,32 +337,37 @@
                 <textarea class="journal-input" rows="4" data-key="prompt-10"></textarea>
             </div>
 
+            <h2 class="text-2xl sm:text-3xl font-semibold text-gray-700 mt-12 mb-6 section-header">DBT-Aligned Skill Prompts</h2>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+                These prompts are designed to help you actively apply concrete skills from Dialectical Behavior Therapy (DBT) to build resilience and ground yourself in the present moment.
+            </p>
+
             <div class="journal-box">
-                <h3 class="text-xl font-bold text-gray-800 mb-4">11. Managing Intense Emotions</h3>
-                <p class="mb-2 text-sm font-semibold text-gray-600">Write about a hypothetical scenario where you feel an intense emotional wave coming on. What physiological signals do you notice in your body? Describe exactly what you would do to bring your body's emotional arousal down to a manageable level. This could include using temperature (like a cold compress), intense exercise, a breathing exercise, or relaxing your muscles one at a time.</p>
+                <h3 class="text-xl font-bold text-gray-800 mb-4">1. The Proactive Application of TIPP</h3>
+                <p class="mb-2 text-sm font-semibold text-gray-600">Write about a hypothetical scenario where you feel an intense emotional wave coming on. What physiological signals do you notice in your body? Using the TIPP skill, describe exactly what you would do to bring your body's emotional arousal down to a manageable level.</p>
                 <textarea class="journal-input" rows="4" data-key="dbt-prompt-1"></textarea>
             </div>
 
             <div class="journal-box">
-                <h3 class="text-xl font-bold text-gray-800 mb-4">12. Physical Factors and Emotional State</h3>
-                <p class="mb-2 text-sm font-semibold text-gray-600">Reflect on your past 24 hours. Consider how physical factors might have affected your emotional state. For example, did you get enough sleep? Did you eat balanced meals? Did you get any exercise? Were there any mood-altering substances? How might addressing just one of these factors have changed your emotional state today?</p>
+                <h3 class="text-xl font-bold text-gray-800 mb-4">2. Mindful Self-Care with the PLEASE Skill</h3>
+                <p class="mb-2 text-sm font-semibold text-gray-600">Reflect on your past 24 hours. Using the DBT skill "PLEASE," identify one way you could have better cared for your Physical Illness, balanced your EATing, avoided mood-altering substances, gotten adequate SLEEP, and exercised. How might addressing just one of these factors have changed your emotional state today?</p>
                 <textarea class="journal-input" rows="4" data-key="dbt-prompt-2"></textarea>
             </div>
 
             <div class="journal-box">
-                <h3 class="text-xl font-bold text-gray-800 mb-4">13. Expressing Yourself and Setting Boundaries</h3>
-                <p class="mb-2 text-sm font-semibold text-gray-600">Think of a current relationship where you need to express yourself or set a boundary. Write out your planned communication, focusing on how you will be fair, how you will not apologize for your position, how you will stick to your values, and how you will be truthful.</p>
+                <h3 class="text-xl font-bold text-gray-800 mb-4">3. Assertive Communication with the FAST Skill</h3>
+                <p class="mb-2 text-sm font-semibold text-gray-600">Think of a current relationship where you feel a need to express yourself or set a boundary. Using the DBT skill "FAST," write out your planned communication. How will you be Fair, how will you not Apologize for your position, how will you Stick to your values, and how will you be Truthful?</p>
                 <textarea class="journal-input" rows="4" data-key="dbt-prompt-3"></textarea>
             </div>
 
             <div class="journal-box">
-                <h3 class="text-xl font-bold text-gray-800 mb-4">14. Accepting What You Cannot Change</h3>
-                <p class="mb-2 text-sm font-semibold text-gray-600">Describe a situation in your life that you find yourself repeatedly fighting against or trying to change, even though you know you have no control over it. How can you distinguish between acknowledging the reality of the situation and condoning it? Write about the suffering you might be able to let go of if you choose to stop fighting this unchangeable reality.</p>
+                <h3 class="text-xl font-bold text-gray-800 mb-4">4. Finding Freedom in Radical Acceptance</h3>
+                <p class="mb-2 text-sm font-semibold text-gray-600">Describe a situation in your life that you find yourself repeatedly fighting against or trying to change, even though you know you have no control over it. Practice radical acceptance of this reality. How can you distinguish between accepting the reality of the situation and condoning it? Write about the suffering you might be able to let go of if you choose to stop fighting this unchangeable reality.</p>
                 <textarea class="journal-input" rows="4" data-key="dbt-prompt-4"></textarea>
             </div>
 
             <div class="journal-box">
-                <h3 class="text-xl font-bold text-gray-800 mb-4">15. Observing Your Thoughts</h3>
+                <h3 class="text-xl font-bold text-gray-800 mb-4">5. Non-Judgmental Observation of Thoughts</h3>
                 <p class="mb-2 text-sm font-semibold text-gray-600">For the next five minutes, simply observe the thoughts that pass through your mind. As a thought arises, you can label it—for example, calling it 'a planning thought' or 'a memory thought.' Don't follow the thought or get caught up in it; just observe and label. What do you notice about the thoughts themselves? Did you feel any physical sensations as you observed them?</p>
                 <textarea class="journal-input" rows="4" data-key="dbt-prompt-5"></textarea>
             </div>
@@ -485,7 +490,7 @@
             const data = collectAllData();
             const date = new Date().toLocaleDateString();
             
-            let shareText = `TRAUMA-INFORMED JOURNAL ENTRIES\n`;
+            let shareText = `GENTLE REFLECTION JOURNAL ENTRIES\n`;
             shareText += `Date: ${date}\n`;
             shareText += `Therapist: Janice LaFountaine, MS, LMFT\n`;
             shareText += `${'='.repeat(70)}\n\n`;
@@ -502,11 +507,11 @@
                 { key: 'prompt-8', label: '8. Meeting Your Needs in the Moment 🎁' },
                 { key: 'prompt-9', label: '9. The Experience of Receiving Care 🤲' },
                 { key: 'prompt-10', label: '10. Cultivating Self-Compassion 🙏' },
-                { key: 'dbt-prompt-1', label: '11. Managing Intense Emotions' },
-                { key: 'dbt-prompt-2', label: '12. Physical Factors and Emotional State' },
-                { key: 'dbt-prompt-3', label: '13. Expressing Yourself and Setting Boundaries' },
-                { key: 'dbt-prompt-4', label: '14. Accepting What You Cannot Change' },
-                { key: 'dbt-prompt-5', label: '15. Observing Your Thoughts' }
+                { key: 'dbt-prompt-1', label: '1. The Proactive Application of TIPP' },
+                { key: 'dbt-prompt-2', label: '2. Mindful Self-Care with the PLEASE Skill' },
+                { key: 'dbt-prompt-3', label: '3. Assertive Communication with the FAST Skill' },
+                { key: 'dbt-prompt-4', label: '4. Finding Freedom in Radical Acceptance' },
+                { key: 'dbt-prompt-5', label: '5. Non-Judgmental Observation of Thoughts' }
             ];
             
             allPrompts.forEach(p => {
@@ -516,7 +521,7 @@
             });
             
             shareText += `\n${'='.repeat(70)}\n`;
-            shareText += `Generated from: Trauma-Informed Journal\n`;
+            shareText += `Generated from: Gentle Reflection Journal\n`;
             shareText += `Therapist: Janice LaFountaine, MS, LMFT\n`;
             shareText += `Date: ${date}`;
             
@@ -677,6 +682,5 @@
             }
         }
     </script>
-
 </body>
 </html>
